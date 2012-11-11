@@ -40,7 +40,15 @@ public class CommandParserTest {
 	@Test(expected=InvalidCommandStringException.class)
 	public void shouldntExecuteWithInvalidCommands() throws InvalidRoverLocationException, NotDeployedRoverException, InvalidCommandStringException
 	{
-		String command = "5 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMWRMMRMRRM";
+		String command = "A 5\n1 2 N\nLMLMLMLMM\n3 3 E\nMWRMMRMRRM";
+		CommandParser parser = new CommandParser(command);
+		parser.run();
+	}
+	
+	@Test(expected=InvalidCommandStringException.class)
+	public void shouldntExecuteWithCommandsNotSeparatedBySpace() throws InvalidRoverLocationException, NotDeployedRoverException, InvalidCommandStringException
+	{
+		String command = "55\n12N\nLMLMLMLMM\n33E\nMMRMMRMRRM";
 		CommandParser parser = new CommandParser(command);
 		parser.run();
 	}
