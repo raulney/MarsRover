@@ -56,8 +56,8 @@ public class Rover {
 		return this.direction;
 	}
 
-	public void setExploreCommands(String string) throws InvalidCommandStringException {
-		String[] arr = string.split("");
+	public void setExploreCommands(String commands) throws InvalidCommandStringException {
+		String[] arr = commands.split("");
 		for (String command : arr) {
 			if (command.equalsIgnoreCase("M") || command.equalsIgnoreCase("L")
 					|| command.equalsIgnoreCase("R")) {
