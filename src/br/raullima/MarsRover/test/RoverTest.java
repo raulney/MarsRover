@@ -14,13 +14,6 @@ import br.raullima.MarsRover.exception.NotDeployedRoverException;
 public class RoverTest {
 	
 	@Test
-	public void shouldInstantiateNewRoverOnPosition55N()
-	{
-		Rover rover = new Rover(5,5,Direction.N);
-		assertEquals("5 5 N", rover.getCurrentPosition());
-	}
-	
-	@Test
 	public void shouldInstantiateNewRoverOnPosition33EByString()
 	{
 		Rover rover = new Rover("3 3 N");

@@ -14,12 +14,6 @@ public class Rover {
 	private List<ExploreCommand> exploreCommands;
 	private Plateau plateau;
 
-	public Rover(int i, int j, Direction n) {
-		this.x = i;
-		this.y = j;
-		this.direction = n;
-	}
-
 	public Rover(String string) {
 		String[] arr = string.split(" ");
 		this.x = Integer.parseInt(arr[0]);
