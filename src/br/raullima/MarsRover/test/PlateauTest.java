@@ -75,5 +75,16 @@ public class PlateauTest {
 		//Third rover should stay at 5 4 N, because 5 5 N is occupied by the first rover.
 		assertEquals("5 5 N\n4 5 N\n5 4 N\n==========", plateau.getRoversPositions());
 	}
+	
+	@Test(expected=InvalidRoverLocationException.class)
+	public void shouldntLetDeployRoverInAnOccupiedPosition() throws InvalidRoverLocationException
+	{
+		Plateau plateau = new Plateau(5, 5);
+		Rover rover1 = new Rover("1 1 N");
+		plateau.deployRover(rover1);
+		
+		Rover rover2 = new Rover("1 1 N");
+		plateau.deployRover(rover2);
+	}
 
 }

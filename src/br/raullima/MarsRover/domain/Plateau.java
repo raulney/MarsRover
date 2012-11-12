@@ -17,8 +17,7 @@ public class Plateau {
 	}
 
 	public void deployRover(Rover rover) throws InvalidRoverLocationException {
-		if (rover.getX() <= this.maxX && rover.getX() >= 0
-				&& rover.getY() <= this.maxY && rover.getY() >= 0) {
+		if (isValidPosition(rover.getX(), rover.getY())) {
 			this.getRovers().add(rover);
 			rover.setPlateau(this);
 		} else {
@@ -58,7 +57,7 @@ public class Plateau {
 
 	private boolean IsEmptyPosition(int x, int y) {
 		boolean valid = true;
-		for (Rover rover : rovers) {
+		for (Rover rover : getRovers()) {
 			if (rover.getX() == x && rover.getY() == y) {
 				valid = false;
 			}
